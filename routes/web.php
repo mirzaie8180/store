@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,3 +13,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+/*
+|--------------------------------------------------------------------------
+| admin
+|--------------------------------------------------------------------------
+*/
+
+route::prefix('admin')->namespace('Admin')->group(function(){
+
+Route::get('/' , 'AdminDashboardController@index')->name('admin.home');
+// Route::get('/' , [AdminDashboardController::class, 'index'])->name('admin.home');
+
+});
+
